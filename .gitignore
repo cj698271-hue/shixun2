@@ -16,8 +16,7 @@
 **/*.crf
 **/*.dep
 **/*.lnp
-**/*_build_log.htm
-**/*_monitor.htm
+**/*.build_log.htm
 **/*.uvoptx
 **/*.uvguix.*
 
