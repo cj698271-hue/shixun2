@@ -1,0 +1,25 @@
+# Per-device Wi-Fi and DMP MQTT credentials must never be committed.
+**/Core/Inc/local_credentials.h
+
+# Reproducible STM32 build products and IDE user settings.
+**/build/
+**/Debug/
+**/Release/
+**/Objects/
+**/*.o
+**/*.d
+**/*.elf
+**/*.axf
+**/*.hex
+**/*.map
+**/*.lst
+**/*.crf
+**/*.dep
+**/*.lnp
+**/*_build_log.htm
+**/*_monitor.htm
+**/*.uvoptx
+**/*.uvguix.*
+
+# Operating-system clutter.
+Thumbs.db

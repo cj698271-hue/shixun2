@@ -1,0 +1,172 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.43.1.0
+Copyright (C) 2025 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: jj 2546704288@qq.com, NCHU, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.43.0.0
+Toolchain Path:  D:\keil mdk-arm\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.24
+Assembler:       Armasm.exe V6.24
+Linker/Locator:  ArmLink.exe V6.24
+Library Manager: ArmAr.exe V6.24
+Hex Converter:   FromElf.exe V6.24
+CPU DLL:         SARMCM3.DLL V5.43.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      UL2CM3.DLL V1.164.16.0
+Dialog DLL:      TCM.DLL V1.56.6.0
+ 
+<h2>Project:</h2>
+D:\Desktop\mqtt\01_temperature_humidity\MDK-ARM\temperature_humidity_monitor.uvprojx
+Project File Date:  07/22/2026
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.24', folder: 'D:\keil mdk-arm\ARM\ARMCLANG\Bin'
+Build target 'temperature_humidity_monitor'
+../Core/Src/main.c(16): warning: In file included from...
+../Core/Inc\app_environment.h(6): error: unknown type name 'ADC_HandleTypeDef'
+    6 | HAL_StatusTypeDef EnvironmentMonitor_Init(UART_HandleTypeDef *esp_uart, ADC_HandleTypeDef *mq2_adc);
+      |                                                                         ^
+1 error generated.
+compiling main.c...
+compiling esp12f.c...
+compiling debug_log.c...
+compiling dht11.c...
+../Core/Src/app_environment.c(1): warning: In file included from...
+../Core/Inc\app_environment.h(6): error: unknown type name 'ADC_HandleTypeDef'
+    6 | HAL_StatusTypeDef EnvironmentMonitor_Init(UART_HandleTypeDef *esp_uart, ADC_HandleTypeDef *mq2_adc);
+      |                                                                         ^
+../Core/Src/app_environment.c(144): error: unknown type name 'ADC_HandleTypeDef'
+  144 | HAL_StatusTypeDef EnvironmentMonitor_Init(UART_HandleTypeDef *esp_uart, ADC_HandleTypeDef *adc)
+      |                                                                         ^
+2 errors generated.
+compiling app_environment.c...
+compiling gpio.c...
+compiling stm32f1xx_hal_gpio_ex.c...
+compiling stm32f1xx_hal_adc_ex.c...
+compiling stm32f1xx_hal_msp.c...
+compiling stm32f1xx_it.c...
+compiling stm32f1xx_hal_adc.c...
+compiling usart.c...
+../Core/Src/mq2.c(1): warning: In file included from...
+../Core/Inc\mq2.h(6): error: unknown type name 'ADC_HandleTypeDef'
+    6 | HAL_StatusTypeDef MQ2_ReadRaw(ADC_HandleTypeDef *hadc, uint16_t *raw_value);
+      |                               ^
+../Core/Src/mq2.c(3): error: unknown type name 'ADC_HandleTypeDef'
+    3 | HAL_StatusTypeDef MQ2_ReadRaw(ADC_HandleTypeDef *hadc, uint16_t *raw_value)
+      |                               ^
+../Core/Src/mq2.c(13): error: call to undeclared function 'HAL_ADC_Start'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   13 |         if (HAL_ADC_Start(hadc) != HAL_OK ||
+      |             ^
+../Core/Src/mq2.c(13): note: did you mean 'HAL_DMA_Start'?
+../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_dma.h(376): note: 'HAL_DMA_Start' declared here
+  376 | HAL_StatusTypeDef HAL_DMA_Start (DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);
+      |                   ^
+../Core/Src/mq2.c(14): error: call to undeclared function 'HAL_ADC_PollForConversion'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   14 |             HAL_ADC_PollForConversion(hadc, 20U) != HAL_OK) {
+      |             ^
+../Core/Src/mq2.c(15): error: call to undeclared function 'HAL_ADC_Stop'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   15 |             (void)HAL_ADC_Stop(hadc);
+      |                   ^
+../Core/Src/mq2.c(18): error: call to undeclared function 'HAL_ADC_GetValue'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   18 |         total += HAL_ADC_GetValue(hadc);
+      |                  ^
+../Core/Src/mq2.c(19): error: call to undeclared function 'HAL_ADC_Stop'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   19 |         (void)HAL_ADC_Stop(hadc);
+      |               ^
+7 errors generated.
+compiling mq2.c...
+../Core/Src/adc.c(1): warning: In file included from...
+../Core/Inc\adc.h(35): error: unknown type name 'ADC_HandleTypeDef'
+   35 | extern ADC_HandleTypeDef hadc1;
+      |        ^
+../Core/Src/adc.c(3): error: unknown type name 'ADC_HandleTypeDef'
+    3 | ADC_HandleTypeDef hadc1;
+      | ^
+../Core/Src/adc.c(7): error: unknown type name 'ADC_ChannelConfTypeDef'; did you mean 'DMA_Channel_TypeDef'?
+    7 |     ADC_ChannelConfTypeDef channel = {0};
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+      |     DMA_Channel_TypeDef
+../Drivers/CMSIS/Device/ST/STM32F1xx/Include\stm32f103xb.h(296): note: 'DMA_Channel_TypeDef' declared here
+  296 | } DMA_Channel_TypeDef;
+      |   ^
+../Core/Src/adc.c(10): error: use of undeclared identifier 'ADC_SCAN_DISABLE'
+   10 |     hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
+      |                               ^
+../Core/Src/adc.c(13): error: use of undeclared identifier 'ADC_SOFTWARE_START'
+   13 |     hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+      |                                   ^
+../Core/Src/adc.c(14): error: use of undeclared identifier 'ADC_DATAALIGN_RIGHT'
+   14 |     hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+      |                            ^
+../Core/Src/adc.c(16): error: call to undeclared function 'HAL_ADC_Init'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   16 |     if (HAL_ADC_Init(&hadc1) != HAL_OK) {
+      |         ^
+../Core/Src/adc.c(20): error: no member named 'Channel' in 'DMA_Channel_TypeDef'
+   20 |     channel.Channel = ADC_CHANNEL_1;
+      |     ~~~~~~~ ^
+../Core/Src/adc.c(20): error: use of undeclared identifier 'ADC_CHANNEL_1'
+   20 |     channel.Channel = ADC_CHANNEL_1;
+      |                       ^
+../Core/Src/adc.c(21): error: no member named 'Rank' in 'DMA_Channel_TypeDef'
+   21 |     channel.Rank = ADC_REGULAR_RANK_1;
+      |     ~~~~~~~ ^
+../Core/Src/adc.c(21): error: use of undeclared identifier 'ADC_REGULAR_RANK_1'
+   21 |     channel.Rank = ADC_REGULAR_RANK_1;
+      |                    ^
+../Core/Src/adc.c(22): error: no member named 'SamplingTime' in 'DMA_Channel_TypeDef'
+   22 |     channel.SamplingTime = ADC_SAMPLETIME_239CYCLES_5;
+      |     ~~~~~~~ ^
+../Core/Src/adc.c(22): error: use of undeclared identifier 'ADC_SAMPLETIME_239CYCLES_5'
+   22 |     channel.SamplingTime = ADC_SAMPLETIME_239CYCLES_5;
+      |                            ^
+../Core/Src/adc.c(23): error: call to undeclared function 'HAL_ADC_ConfigChannel'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   23 |     if (HAL_ADC_ConfigChannel(&hadc1, &channel) != HAL_OK) {
+      |         ^
+../Core/Src/adc.c(26): error: call to undeclared function 'HAL_ADCEx_Calibration_Start'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   26 |     if (HAL_ADCEx_Calibration_Start(&hadc1) != HAL_OK) {
+      |         ^
+../Core/Src/adc.c(31): error: unknown type name 'ADC_HandleTypeDef'
+   31 | void HAL_ADC_MspInit(ADC_HandleTypeDef *adc)
+      |                      ^
+../Core/Src/adc.c(44): error: unknown type name 'ADC_HandleTypeDef'
+   44 | void HAL_ADC_MspDeInit(ADC_HandleTypeDef *adc)
+      |                        ^
+17 errors generated.
+compiling adc.c...
+assembling startup_stm32f103xb.s...
+compiling stm32f1xx_hal.c...
+compiling stm32f1xx_hal_rcc_ex.c...
+compiling stm32f1xx_hal_gpio.c...
+compiling stm32f1xx_hal_rcc.c...
+compiling stm32f1xx_hal_pwr.c...
+compiling stm32f1xx_hal_dma.c...
+compiling stm32f1xx_hal_cortex.c...
+compiling stm32f1xx_hal_flash.c...
+compiling system_stm32f1xx.c...
+compiling stm32f1xx_hal_exti.c...
+compiling stm32f1xx_hal_flash_ex.c...
+compiling stm32f1xx_hal_uart.c...
+"..\temperature_humidity_monitor.axf" - 27 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil::STM32F1xx_DFP@2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_temperature_humidity_monitor
+  D:/keil mdk arm pack/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:06
+</pre>
+</body>
+</html>
