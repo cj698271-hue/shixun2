@@ -17,6 +17,7 @@
 **/*.dep
 **/*.lnp
 **/*.build_log.htm
+**/*_monitor.htm
 **/*.uvoptx
 **/*.uvguix.*
 
